@@ -32,8 +32,8 @@ Plot the Output Images.
 
 ## PROGRAM :
 ```
-Name : Naramala Niharika
-Ref no : 212221240031
+Name : Aavula Tharun
+Ref no : 212221240003
 
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -54,8 +54,8 @@ x_test_noisy = x_test_scaled + noise_factor * np.random.normal(loc=0.0, scale=1.
 
 x_train_noisy = np.clip(x_train_noisy, 0., 1.)
 x_test_noisy = np.clip(x_test_noisy, 0., 1.)
-n = 10
-plt.figure(figsize=(20, 2))
+n = 5
+plt.figure(figsize=(20, 3))
 for i in range(1, n + 1):
     ax = plt.subplot(1, n, i)
     plt.imshow(x_test_noisy[i].reshape(28, 28))
@@ -92,8 +92,8 @@ metrics = pd.DataFrame(autoencoder.history.history)
 metrics.head()
 metrics[['loss','val_loss']].plot()
 decoded_imgs = autoencoder.predict(x_test_noisy)
-n = 10
-plt.figure(figsize=(20, 4))
+n = 5
+plt.figure(figsize=(20, 3))
 for i in range(1, n + 1):
     # Display original
     ax = plt.subplot(3, n, i)
@@ -128,9 +128,6 @@ plt.show()
 
 ### Original vs Noisy Vs Reconstructed Image:
 ![46c3205f-e7c8-4d22-aede-49e170ae1ee3](https://github.com/AavulaTharun/convolutional-denoising-autoencoder/assets/93427201/91430216-8d0b-404c-b626-ccf54409ade5)
-
-
-
 
 ## RESULT :
 
